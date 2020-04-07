@@ -1,0 +1,12 @@
+export enum TipologiaDiReportRegioni {
+  DECEDUTI = '0',
+  TOTALE = '1',
+  RICOVERATI = '2',
+  TERAPIA_INTENSIVA = '3',
+  OSPEDALIZZATI = '4',
+  ISOLAMENTO_DOMICILIARE = '5',
+  ATTUALMENTE_POSITIVI = '6',
+  NUOVI_POSITIVI = '7',
+  DIMESSI = '8',
+  TAMPONI = '9'
+}

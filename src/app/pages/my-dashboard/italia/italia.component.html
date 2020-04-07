@@ -1,0 +1,30 @@
+<nb-card accent="info">
+  <nb-card-header>
+    Dati Italia
+    <nb-select
+      multiple
+      placeholder="Dato"
+      style="float: right; min-width: 20%;"
+      [(selected)]="tipologiaReportSelezionata"
+      (selectedChange)="caricaDatiGrafico(tipologiaReportSelezionata)"
+    >
+      <nb-option value="0">DECEDUTI</nb-option>
+      <nb-option value="1">TOTALE</nb-option>
+      <nb-option value="2">RICOVERATI</nb-option>
+      <nb-option value="3">TERAPIA_INTENSIVA</nb-option>
+      <nb-option value="4">OSPEDALIZZATI</nb-option>
+      <nb-option value="5">ISOLAMENTO_DOMICILIARE</nb-option>
+      <nb-option value="6">ATTUALMENTE_POSITIVI</nb-option>
+      <nb-option value="7">NUOVI_POSITIVI</nb-option>
+      <nb-option value="8">DIMESSI</nb-option>
+      <nb-option value="9">TAMPONI</nb-option>
+    </nb-select>
+  </nb-card-header>
+  <nb-card-body style="min-height: 600px;">
+    <app-graph
+      [dati]="datiItalia"
+      class="col-12"
+      style="min-height: 500px;"
+    ></app-graph>
+  </nb-card-body>
+</nb-card>

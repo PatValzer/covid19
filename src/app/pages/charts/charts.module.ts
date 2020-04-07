@@ -49,6 +49,28 @@ const components = [
   EchartsRadarComponent,
 ];
 
+exports: [
+  ChartjsBarComponent,
+  ChartjsLineComponent,
+  ChartjsPieComponent,
+  ChartjsMultipleXaxisComponent,
+  ChartjsBarHorizontalComponent,
+  ChartjsRadarComponent,
+  D3BarComponent,
+  D3LineComponent,
+  D3PieComponent,
+  D3AreaStackComponent,
+  D3PolarComponent,
+  D3AdvancedPieComponent,
+  EchartsLineComponent,
+  EchartsPieComponent,
+  EchartsBarComponent,
+  EchartsMultipleXaxisComponent,
+  EchartsAreaStackComponent,
+  EchartsBarAnimationComponent,
+  EchartsRadarComponent,
+]
+
 @NgModule({
   imports: [
     ThemeModule,
