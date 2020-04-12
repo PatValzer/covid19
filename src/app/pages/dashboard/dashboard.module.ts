@@ -81,6 +81,6 @@ import { FormsModule } from '@angular/forms';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
-  ]
+  ],
 })
 export class DashboardModule { }

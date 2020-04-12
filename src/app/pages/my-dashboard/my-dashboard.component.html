@@ -1,6 +1,17 @@
-<div class="row" style="min-height: 100%;">
-  <div class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12">
-    <app-italia></app-italia>
-    <!-- <ngx-electricity></ngx-electricity> -->
-  </div>
+<div class="row" style="min-height: 100%;" class="col-xxxl-12 col-xxl-12 col-lg-12 col-md-12">
+  <nb-card size="large">
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="Mondo">
+        <app-mondo></app-mondo> </nb-tab>
+      <nb-tab tabTitle="Italia">
+        <app-italia></app-italia>
+      </nb-tab>
+      <nb-tab tabTitle="Regioni">
+        <app-regioni></app-regioni>
+      </nb-tab>
+      <nb-tab tabTitle="Province">
+        <app-province></app-province>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card>
 </div>

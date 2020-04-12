@@ -18,7 +18,7 @@
   </mat-select>
 </mat-form-field> -->
 
-<nb-select multiple placeholder="Multiple Select">
+<nb-select [multiple]="multiple" [placeholder]="label" class="col-12" (selectedChange)="selectionChange()" [formControl]="formControl">
   <nb-option *ngFor="let item of filteredItems | async" [value]="item">
     {{item}}
   </nb-option>

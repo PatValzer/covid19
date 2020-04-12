@@ -1,0 +1,25 @@
+<nb-card accent="info">
+  <nb-card-header>
+    Dati Regioni
+            <nb-select
+              [(selected)]="tipologiaReportSelezionata"
+              (selectedChange)="caricaDatiGrafico()"
+              style="float: right; min-width: 20%;">
+              <nb-option value="0">DECEDUTI</nb-option>
+              <nb-option value="1">TOTALE</nb-option>
+              <nb-option value="2">RICOVERATI</nb-option>
+              <nb-option value="3">TERAPIA_INTENSIVA</nb-option>
+              <nb-option value="4">OSPEDALIZZATI</nb-option>
+              <nb-option value="5">ISOLAMENTO_DOMICILIARE</nb-option>
+              <nb-option value="6">ATTUALMENTE_POSITIVI</nb-option>
+              <nb-option value="7">NUOVI_POSITIVI</nb-option>
+              <nb-option value="8">DIMESSI</nb-option>
+              <nb-option value="9">TAMPONI</nb-option>
+            </nb-select>
+            <app-select style="float: right; min-width: 20%; padding-right: 15px;" label="Regioni" [formControl]="regioniSelezionate"  [items]="regioni" (selected)="regioniSelected($event)" multiple="false">
+            </app-select>
+  </nb-card-header>
+  <nb-card-body style="min-height: 600px;">
+    <app-graph [dati]="datiRegioni" class="col-12 "></app-graph>
+  </nb-card-body>
+</nb-card>

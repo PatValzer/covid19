@@ -1,0 +1,29 @@
+<nb-card accent="info">
+  <nb-card-header>
+    <app-select
+      label="Regioni"
+      [items]="regioni"
+      [formControl]="regioniSelezionate"
+      (selected)="regioniSelected($event)"
+    >
+    </app-select>
+    <app-select
+      label="Province"
+      [(items)]="listaProvince"
+      [formControl]="provinceSelezionate"
+      (selected)="selectionProvinceChange($event)"
+    >
+    </app-select>
+    <nb-select
+      [(selected)]="tipologiaReportSelezionata"
+      (selectedChange)="selezionaTipologiaReport()"
+      style="min-width: 20%;"
+    >
+      <nb-option value="0">Incremento %</nb-option>
+      <nb-option value="1">Totale casi</nb-option>
+    </nb-select>
+  </nb-card-header>
+  <nb-card-body style="min-height: 600px;">
+    <app-graph [dati]="datiProvince" class="col-12"></app-graph>
+  </nb-card-body>
+</nb-card>

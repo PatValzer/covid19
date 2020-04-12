@@ -4,7 +4,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'My dashboard',
     icon: 'home-outline',
-    link: '/pages/my-dashboard'
+    link: '/pages/my-dashboard',
   },
   {
     title: 'E-commerce',

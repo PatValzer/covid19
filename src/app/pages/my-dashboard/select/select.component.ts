@@ -6,12 +6,12 @@ import { Subject, ReplaySubject } from 'rxjs';
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+  styleUrls: ['./select.component.scss'],
 })
 export class SelectComponent implements OnInit {
   protected _onDestroy = new Subject<void>();
   @Input()
-  multiple = true
+  multiple = true;
 
   @Input()
   label;

@@ -11,7 +11,7 @@ import {
   NbIconModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { ThemeModule } from '../../@theme/theme.module';
 import { MyDashboardComponent } from './my-dashboard.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
@@ -39,6 +39,9 @@ import { ItaliaComponent } from './italia/italia.component';
 import { ChartsModule } from '../charts/charts.module';
 import { ChartModule } from 'angular2-chartjs';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { RegioniComponent } from './regioni/regioni.component';
+import { ProvinceComponent } from './province/province.component';
+import { MondoComponent } from './mondo/mondo.component';
 
 @NgModule({
   imports: [
@@ -59,7 +62,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     ChartsModule,
     ChartModule,
     NgxChartsModule,
-
+    ReactiveFormsModule,
 
   ],
   declarations: [
@@ -67,11 +70,15 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     SelectComponent,
     GraphComponent,
     ItaliaComponent,
+    RegioniComponent,
+    ProvinceComponent,
+    MondoComponent,
   ],
   providers: [
     GetDataService,
     HttpClient,
     DatePipe,
+
     //DeviceDetectorService
   ],
 })
