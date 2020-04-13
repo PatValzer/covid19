@@ -42,6 +42,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RegioniComponent } from './regioni/regioni.component';
 import { ProvinceComponent } from './province/province.component';
 import { MondoComponent } from './mondo/mondo.component';
+import { WorldComponent } from './world/world.component';
 
 @NgModule({
   imports: [
@@ -73,6 +74,7 @@ import { MondoComponent } from './mondo/mondo.component';
     RegioniComponent,
     ProvinceComponent,
     MondoComponent,
+    WorldComponent
   ],
   providers: [
     GetDataService,

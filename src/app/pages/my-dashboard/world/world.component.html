@@ -1,0 +1,27 @@
+<nb-card accent="info">
+  <nb-card-header>
+    <app-select
+      multiple="false"
+      label="Stati"
+      [items]="stati"
+      [formControl]="statiSelezionati"
+      (selected)="statiSelected($event)"
+    >
+    </app-select>
+
+    <nb-select
+      [(selected)]="tipologiaReportSelezionata"
+      (selectedChange)="caricaDatiGrafico()"
+    >
+      <nb-option value="0">DECEDUTI</nb-option>
+      <nb-option value="1">CASI</nb-option>
+    </nb-select>
+  </nb-card-header>
+  <nb-card-body style="min-height: 600px;">
+    <app-graph
+      [dati]="datiMondo"
+      class="col-12"
+      style="height: 100%;"
+    ></app-graph>
+  </nb-card-body>
+</nb-card>

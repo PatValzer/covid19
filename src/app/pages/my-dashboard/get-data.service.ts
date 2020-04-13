@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Provincia } from './provincia';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Regione } from './regione';
-import { map } from 'lodash';
 import { Mondo } from './mondo';
 
 @Injectable({
@@ -16,9 +15,14 @@ export class GetDataService {
   private datiRegioniURl =
     'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json';
 
-  private worlUrl =
+  private mondoUrl =
     // "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-0";
     'https://opendata.ecdc.europa.eu/covid19/casedistribution/json/';
+
+  private worldUrl =
+    // "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-0";
+    'https://pomber.github.io/covid19/timeseries.json';
+
   constructor(private http: HttpClient) { }
 
   public getDatiProvince(): Observable<Provincia[]> {
@@ -30,8 +34,11 @@ export class GetDataService {
   }
 
   public getDatiMondo(): Observable<any> {
-    return this.http.get<Mondo[]>('https://cors-anywhere.herokuapp.com/' + this.worlUrl);
-    return this.exportCsv();
+    return this.http.get<Mondo[]>('https://cors-anywhere.herokuapp.com/' + this.mondoUrl);
+
+  }
+  public getDatiWorld(): Observable<any> {
+    return this.http.get<any[]>('https://cors-anywhere.herokuapp.com/' + this.worldUrl);
   }
 
   exportCsv(): Observable<any> {
@@ -39,7 +46,7 @@ export class GetDataService {
     const month = date.getMonth();
     const day = date.getDate();
     return this.http.get(
-      'https://cors-anywhere.herokuapp.com/' + this.worlUrl + (month + 1) + '-' + day + '.csv',
+      'https://cors-anywhere.herokuapp.com/' + this.mondoUrl + (month + 1) + '-' + day + '.csv',
       {
         responseType: 'text',
       },
